@@ -1,0 +1,11 @@
+{
+    "compilerOptions": {
+        "noEmitOnError": true,
+        "target": "es6",
+        "outDir": "js",
+        "noImplicitAny": true
+    },
+    "include": [
+        "ts/**/*"
+    ]
+}
