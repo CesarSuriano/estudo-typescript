@@ -1,4 +1,19 @@
+Aula 4.1
+- crie uma view chamada Mensagemview
+- ela tem um _elemento do tipo Element, recebe um seletor do tipo string e this elemento recebe document.query seletor do seletor
+- o evento update recebe um model do tipo string
+- nesse evento o innerHTML recebe this.template que será criado agora
+- o template recebe um model do tipo string
+- e retorna um paragrafo com uma class alert alert-info
+- dentro do paragrafo exiba o model
+- chame no index html o arquivo de mensagem
+- em negociacao controller crie uma variavel pra mensagem e passe o seletorID que já esta no html
+- chame o evento de update no adiciona, passando a mensagem desejada
 
 
-
-
+Aula 4.2
+- apague a variavel e o contrutor das views
+- Crie a Classe view e coloque os elementos apagados dentro dela
+- importe no index html
+- nas views coloque um extends da view
+- NÃO ACABOU

@@ -3,7 +3,8 @@
         "noEmitOnError": true,
         "target": "es6",
         "outDir": "js",
-        "noImplicitAny": true
+        "noImplicitAny": true,
+        "removeComments": true
     },
     "include": [
         "ts/**/*"
