@@ -4,7 +4,8 @@
         "target": "es6",
         "outDir": "js",
         "noImplicitAny": true,
-        "removeComments": true
+        "removeComments": true,
+        "module": "system"
     },
     "include": [
         "ts/**/*"
