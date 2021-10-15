@@ -1,36 +1,31 @@
 System.register([], function (exports_1, context_1) {
     "use strict";
-    var __moduleName = context_1 && context_1.id;
     var Negociacao;
+    var __moduleName = context_1 && context_1.id;
     return {
         setters: [],
         execute: function () {
             Negociacao = class Negociacao {
-                constructor(_data, _quantidade, _valor) {
-                    this._data = _data;
-                    this._quantidade = _quantidade;
-                    this._valor = _valor;
+                constructor(data, quantidade, valor) {
+                    this.data = data;
+                    this.quantidade = quantidade;
+                    this.valor = valor;
                 }
-                get data() {
-                    return this._data;
-                }
-                set data(value) {
-                    this._data = value;
-                }
-                get quantidade() {
-                    return this._quantidade;
-                }
-                set quantidade(value) {
-                    this._quantidade = value;
-                }
-                get valor() {
-                    return this._valor;
-                }
-                set valor(value) {
-                    this._valor = value;
+                ehIgual(objeto) {
+                    return this.data.getDate() == objeto.data.getDate() &&
+                        this.data.getMonth() == objeto.data.getMonth() &&
+                        this.data.getDay() == objeto.data.getDay();
                 }
                 get volume() {
                     return this.quantidade * this.valor;
+                }
+                paraTexto() {
+                    console.log(`
+                Data: ${this.data},
+                Quantidade: ${this.quantidade},
+                Valor: ${this.valor},
+                Volume: ${this.volume},
+            `);
                 }
             };
             exports_1("Negociacao", Negociacao);

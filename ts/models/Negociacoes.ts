@@ -1,6 +1,10 @@
 import { Negociacao } from "./Negociacao"
+import { IImprimivel, IIgualavel } from "./index";
 
-export class Negociacoes {
+export class Negociacoes implements IImprimivel, IIgualavel<Negociacoes>{
+    ehIgual(objeto: Negociacoes): boolean {
+        return JSON.stringify(this._negociacoes) == JSON.stringify(objeto._negociacoes)
+    }
     private _negociacoes: Array<Negociacao> = []
 
     adiciona(negocicao: Negociacao): void {
@@ -8,6 +12,13 @@ export class Negociacoes {
     }
 
     getNegociacoes(): Negociacao[] {
-        return [].concat(this._negociacoes)
+        return ([] as Negociacao[]).concat(this._negociacoes)
     }
+
+    paraTexto(): void {
+        console.log('Impressão negociações:')
+        console.log(this._negociacoes)
+    }
+
+    
 }

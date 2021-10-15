@@ -5,7 +5,9 @@
         "outDir": "js",
         "noImplicitAny": true,
         "removeComments": true,
-        "module": "system"
+        "module": "system",
+       // "strictNullChecks": true,
+        "experimentalDecorators": true
     },
     "include": [
         "ts/**/*"

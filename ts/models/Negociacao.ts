@@ -1,29 +1,27 @@
-export class Negociacao {
+import { IImprimivel, IIgualavel } from "../models/index"
+
+export class Negociacao implements IImprimivel, IIgualavel<Negociacao> {
+    ehIgual(objeto: Negociacao): boolean {
+        return this.data.getDate() == objeto.data.getDate() &&
+            this.data.getMonth() == objeto.data.getMonth() &&
+            this.data.getDay() == objeto.data.getDay()
+    }
 
 
-    constructor(private _data: Date, private _quantidade: number, private _valor: number) {}
+    constructor(readonly data: Date, readonly quantidade: number, readonly valor: number) { }
 
-    public get data() {
-        return this._data;
-    }
-    public set data(value) {
-        this._data = value;
-    }
-
-    public get quantidade() {
-        return this._quantidade;
-    }
-    public set quantidade(value) {
-        this._quantidade = value;
-    }
-    public get valor() {
-        return this._valor;
-    }
-    public set valor(value) {
-        this._valor = value;
-    }
-
-    public get volume(){
+    public get volume() {
         return this.quantidade * this.valor;
+    }
+
+    paraTexto(): void {
+        console.log(
+            `
+                Data: ${this.data},
+                Quantidade: ${this.quantidade},
+                Valor: ${this.valor},
+                Volume: ${this.volume},
+            `
+        );
     }
 }
